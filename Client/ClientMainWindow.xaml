@@ -1,0 +1,25 @@
+﻿<Window x:Class="Client.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Client"
+        mc:Ignorable="d"
+        Title="Client" Height="600" Width="800" Icon="icons-monitor.ico">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <DockPanel LastChildFill="False">
+            <Label VerticalContentAlignment="Center" HorizontalContentAlignment="Center">Sender IP:</Label>
+            <TextBox Name="TbSenderIP" Width="80" Height="25" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="10.3.17.2"/>
+            <Label VerticalContentAlignment="Center" HorizontalContentAlignment="Center">Port:</Label>
+            <TextBox Name="TbSenderPort" Text="15000" Height="25" Width="50" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Button Name="ButStart" Content="Start" DockPanel.Dock="Right" Padding="3" Margin="3" Click="ButStart_Click" />
+        </DockPanel>
+        <ProgressBar Grid.Row="1" Name="ProgressBar" Height="2" Margin="5,0" Visibility="Collapsed"/>
+        <Image Grid.Row="2" Name="PictureBox"/>
+    </Grid>
+</Window>
