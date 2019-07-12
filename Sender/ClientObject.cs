@@ -17,8 +17,8 @@ namespace Sender
 {
     public class ClientObject
     {
-        private TcpClient _client;
-        private EndPoint _remoteEndPoint;
+        private readonly TcpClient _client;
+        private readonly EndPoint _remoteEndPoint;
 
         public ClientObject(TcpClient client)
         {
@@ -77,7 +77,8 @@ namespace Sender
                 if(_client.Client.Connected == false)
                 {
                     DateTime dt = DateTime.Now;
-                    await mainWindow.Dispatcher.BeginInvoke(new Action(() => Server.AddTextToLog(string.Format("Disconnected Client {0}\n", _remoteEndPoint.ToString()),
+                    await mainWindow.Dispatcher.BeginInvoke(new Action(() => Server.AddTextToLog(
+                        $"Disconnected Client {_remoteEndPoint.ToString()}\n",
                     System.Windows.Media.Brushes.Green)));
                 }
             }
